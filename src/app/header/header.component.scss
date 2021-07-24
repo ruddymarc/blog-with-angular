@@ -1,0 +1,35 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  &>.push {
+    margin-left: auto;
+  }
+  svg.logo {
+    fill: #1976d2;
+  }
+  a {
+    color: snow;
+    text-decoration: none;
+
+    svg path {
+      fill: snow;
+    }
+
+    &:hover, &:active {
+      color: skyblue;
+      font-weight: bold;
+
+      svg path {
+        fill: skyblue;
+      }
+    }
+  }
+}
