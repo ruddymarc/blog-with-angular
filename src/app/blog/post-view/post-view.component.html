@@ -1,0 +1,31 @@
+<article>
+  <h1>{{ post.title }}</h1>
+
+  <img [src]="post.imageUrl" [alt]="post.title" *ngIf="post.imageUrl">
+  
+  <div class="media">
+    <div class="media-left media-middle">
+      <p class="btn btn-info">
+        <i class="glyphicon glyphicon-user"></i>
+      </p>
+    </div>
+    <div class="media-body">
+      <p class="pull-right">
+        <button class="btn btn-small btn-default" (click)="onHateIts()">
+          <span class="text-danger"><i class="glyphicon glyphicon-thumbs-down"></i></span>
+        </button>&nbsp;
+        <button class="btn btn-small btn-default text-success" (click)="onLoveIts()">
+          <span class="text-success"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+        </button>
+      </p>
+      <span>Publier le {{ post.createdAt | date : 'short' }} <br></span> 
+      par {{ post.author?.fullName }}
+    </div>
+  </div>
+  
+  <p [innerHTML]="post.content | nl2br"></p>
+  
+  <p class="text-center">
+    <a (click)="onBackToList()"> 👈🏻 Retour à la liste</a>
+  </p>
+</article>

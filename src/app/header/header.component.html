@@ -19,6 +19,19 @@
     <text x="15%" y="60%" fill="skyblue" font-familly="Lucida Fax" font-size="2.2em" filter="url(#shadow-filter)">R. R</text>
     Sorry, your browser does not support inline SVG.
   </svg>
+
+  <ul class="nav nav-pills">
+    <li routerLinkActive="active">
+      <a routerLink="blog">
+        Blog
+      </a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="blog/post/new">
+        Publier un article
+      </a>
+    </li>
+  </ul>
   
   <span *ngIf="!isLogged()" class="push">
     <a routerLink="login" title="S'identifier">

@@ -9,13 +9,24 @@ import { AuthGuard } from './services/auth.guard';
 import { AuthService } from './services/auth.service';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostListComponent } from './blog/post-list/post-list.component';
+import { PostListItemComponent } from './blog/post-list-item/post-list-item.component';
+import { PostViewComponent } from './blog/post-view/post-view.component';
+import { PostNewComponent } from './blog/post-new/post-new.component';
+import { PostService } from './services/post.service';
+import { NewLineToBreakPipe } from './pipes/new-line-to-break.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    HeaderComponent
+    HeaderComponent,
+    PostListComponent,
+    PostListItemComponent,
+    PostViewComponent,
+    PostNewComponent,
+    NewLineToBreakPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     AuthGuard,
-    AuthService
+    AuthService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })

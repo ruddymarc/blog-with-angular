@@ -1,0 +1,34 @@
+<h1>{{ title }}</h1>
+<form *ngIf="postForm" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">
+      Titre
+    </label>
+    <input formControlName="title" id="title" type="text">
+  </div>
+  <div class="form-group">
+    <label for="summary">
+      Résumer
+    </label>
+    <textarea formControlName="summary" id="sumary" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="content">
+      Contenue
+    </label>
+    <textarea formControlName="content" id="content" rows="10"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="imageUrl">
+      Ajouter une image
+    </label>
+    <input id="imageUrl" type="file" accept="image/*" (change)="uploadFile($event)">
+  </div>
+  &nbsp;
+  
+  <p class="text-center">
+    <button [disabled]="postForm.invalid || fileState.isUploading" type="submit" class="btn btn-success">
+      💾 Publier
+    </button>
+  </p>
+</form>

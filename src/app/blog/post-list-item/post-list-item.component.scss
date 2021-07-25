@@ -1,0 +1,22 @@
+.list-group-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2vh;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+  &>.btn-close {
+    flex-basis: auto;
+    align-self: flex-start;
+    order: 3;
+    cursor: pointer;
+  }
+  article {
+    flex-grow: 2;
+  }
+  aside {
+    padding: 1em;
+    img {
+      max-width: 100px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<li *ngIf="post" [ngClass]="{ 'list-group-item': true, 'list-group-item-success': isAppreciated(), 'list-group-item-danger': isDepreciating() }">
+  <span *ngIf="isAuthor()" (click)="onDeletePost()" title="Supprimer l'article" class="btn-close">ⓧ</span>
+
+  <aside *ngIf="post.imageUrl">
+    <img [src]="post.imageUrl" [alt]="post.title">
+  </aside>
+
+  <article>
+    <h2 [ngClass]="{ 'text-danger': isDepreciating(), 'text-success': isAppreciated() }" >
+      {{ post.title }}
+    </h2>
+    <p>
+      <span>Publier le {{ post.createdAt | date : 'short' }}</span> 
+      par {{ post.author?.fullName }}
+    </p>
+    <p>{{ post.summary }}</p>
+
+    <p class="text-right">
+      <button class="btn btn-sm btn-success" (click)="onViewPost()">
+        <i class="glyphicon glyphicon-eye-open"></i> 
+        Voir l'article
+      </button>
+      &nbsp;
+      <button class="btn btn-sm btn-danger" (click)="onDeletePost()"  *ngIf="isAuthor()">
+        <i class="glyphicon glyphicon-trash"></i> 
+        Supprimer l'article
+      </button>
+    </p>
+  </article>
+</li>
